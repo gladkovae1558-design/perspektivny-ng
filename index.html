@@ -249,6 +249,7 @@ footer .ny{font-family:"Lobster";font-size:26px;color:#d9e0ff;text-shadow:0 0 12
         <p class="err" id="rsvp-err" hidden>Впишите, пожалуйста, фамилию и имя</p>
       </form>
       <div class="sent" id="rsvp-sent" hidden>
+        <p class="err" id="rsvp-slow" hidden>Не получилось отправить ответ автоматически — похоже, мешает соединение.</p>
         <b>Почти готово!</b>
         <p>Мы скопировали ваш ответ. В открывшемся чате с организатором вставьте его и нажмите «Отправить».</p>
         <div class="msg" id="rsvp-msg"></div>
@@ -335,11 +336,19 @@ var RSVP_ENDPOINT = "https://script.google.com/macros/s/AKfycbyHaSE3me7A6R7YrzB7
     if (RSVP_ENDPOINT) {
       var b = f.querySelector("button"), label = b.innerHTML;
       b.disabled = true; b.style.opacity = .7; b.textContent = "Отправляем…";   // Google иногда отвечает 5–10 секунд
-      // text/plain + no-cors: запрос уходит без лишних проверок браузера, Google пишет строку в таблицу
-      fetch(RSVP_ENDPOINT, { method: "POST", mode: "no-cors", headers: { "Content-Type": "text/plain;charset=utf-8" },
-                             body: JSON.stringify({ name: n, answer: ans }) })
-        .then(function(){ f.hidden = true; document.getElementById("rsvp-done").hidden = false; })
-        .catch(function(){ b.disabled = false; b.style.opacity = 1; b.innerHTML = label; fallback(text); });
+      // text/plain + no-cors: запрос уходит без лишних проверок браузера, Google пишет строку в таблицу.
+      // Если Google не ответил за 20 секунд (сеть, VPN, блокировщик) - показываем запасной путь через Telegram.
+      var finished = false;
+      var fail = function(){ if (finished) return; finished = true; b.disabled = false; b.style.opacity = 1; b.innerHTML = label;
+        document.getElementById("rsvp-slow").hidden = false; fallback(text); };
+      var timer = setTimeout(fail, 20000);
+      try {
+        fetch(RSVP_ENDPOINT, { method: "POST", mode: "no-cors", headers: { "Content-Type": "text/plain;charset=utf-8" },
+                               body: JSON.stringify({ name: n, answer: ans }) })
+          .then(function(){ if (finished) return; finished = true; clearTimeout(timer);
+                            f.hidden = true; document.getElementById("rsvp-done").hidden = false; })
+          .catch(function(){ clearTimeout(timer); fail(); });
+      } catch (x) { clearTimeout(timer); fail(); }
     } else { fallback(text); }
   });
   function fallback(text){
