@@ -333,12 +333,13 @@ var RSVP_ENDPOINT = "https://script.google.com/macros/s/AKfycbyHaSE3me7A6R7YrzB7
     var text = "Перспективный Новый год: " + n + " — " + ans.toLowerCase();
     if (f.website && f.website.value) return;            // ловушка для спам-ботов (поле невидимо для людей)
     if (RSVP_ENDPOINT) {
-      var b = f.querySelector("button"); b.disabled = true; b.style.opacity = .6;
+      var b = f.querySelector("button"), label = b.innerHTML;
+      b.disabled = true; b.style.opacity = .7; b.textContent = "Отправляем…";   // Google иногда отвечает 5–10 секунд
       // text/plain + no-cors: запрос уходит без лишних проверок браузера, Google пишет строку в таблицу
       fetch(RSVP_ENDPOINT, { method: "POST", mode: "no-cors", headers: { "Content-Type": "text/plain;charset=utf-8" },
                              body: JSON.stringify({ name: n, answer: ans }) })
         .then(function(){ f.hidden = true; document.getElementById("rsvp-done").hidden = false; })
-        .catch(function(){ b.disabled = false; b.style.opacity = 1; fallback(text); });
+        .catch(function(){ b.disabled = false; b.style.opacity = 1; b.innerHTML = label; fallback(text); });
     } else { fallback(text); }
   });
   function fallback(text){
