@@ -321,7 +321,7 @@ footer .ny{font-family:"Lobster";font-size:26px;color:#d9e0ff;text-shadow:0 0 12
 // RSVP_ENDPOINT - адрес веб-приложения Google Apps Script (ответы пишутся в Google Таблицу организатора,
 // видит их только он). Вставьте сюда ссылку вида https://script.google.com/macros/s/.../exec
 // Пока ссылка пустая, ответ копируется и гость отправляет его организатору в Telegram.
-var RSVP_ENDPOINT = "";
+var RSVP_ENDPOINT = "https://script.google.com/macros/s/AKfycbyHaSE3me7A6R7YrzB7AMg8qVUDqsFR_7o1LYo6oIdEIlg_Aeii4lKLdknLpfKUgvYzaA/exec";
 (function(){
   var f = document.getElementById("rsvp-form"), name = document.getElementById("rsvp-name"), err = document.getElementById("rsvp-err");
   f.addEventListener("submit", function(e){
