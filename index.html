@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Перспективный Новый год · 18 декабря</title>
+<meta name="description" content="Блок перспективного развития приглашает на Перспективный Новый год. 18 декабря, 19:00, «Курятник» у бара «Балаган», Ноябрьск.">
+<!-- страница доступна только по ссылке: просим поисковики её не показывать -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#07060f">
+<!-- превью при пересылке ссылки в Telegram / WhatsApp -->
+<meta property="og:title" content="Перспективный Новый год · 18 декабря">
+<meta property="og:description" content="Блок перспективного развития приглашает! 19:00, «Курятник» у бара «Балаган». Дресс-код — неон.">
+<meta property="og:image" content="https://gladkovae1558-design.github.io/perspektivny-ng/assets/og.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 4l14 22h-8l12 16h-9l11 14H12l11-14h-9l12-16h-8z' fill='none' stroke='%233ce1ff' stroke-width='3' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+@font-face{font-family:"Unbounded";src:url(assets/Unbounded.woff2) format("woff2");font-weight:200 900;font-display:swap}
+@font-face{font-family:"Comfortaa";src:url(assets/Comfortaa.woff2) format("woff2");font-weight:300 700;font-display:swap}
+@font-face{font-family:"Lobster";src:url(assets/Lobster.woff2) format("woff2");font-display:swap}
+:root{
+  --bg:#07060f; --bg2:#0e0b1f; --card:rgba(255,255,255,.045); --line:rgba(150,215,255,.22);
+  --cyan:#3ce1ff; --pink:#ff46dc; --green:#46ffbe; --blue:#7c8cff; --text:#eef3ff; --muted:#a9b3d6;
+  --glow-c:0 0 6px rgba(60,225,255,.9),0 0 18px rgba(60,225,255,.55),0 0 42px rgba(60,225,255,.35);
+  --glow-p:0 0 6px rgba(255,70,220,.9),0 0 18px rgba(255,70,220,.55),0 0 42px rgba(255,70,220,.35);
+  --glow-g:0 0 6px rgba(70,255,190,.9),0 0 18px rgba(70,255,190,.5),0 0 40px rgba(70,255,190,.3);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:"Comfortaa",system-ui,sans-serif;font-weight:500;line-height:1.55;
+  min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;z-index:-2;
+  background:radial-gradient(90vw 60vh at 15% -10%,rgba(70,255,190,.16),transparent 60%),
+             radial-gradient(80vw 60vh at 100% 10%,rgba(124,140,255,.18),transparent 60%),
+             radial-gradient(90vw 70vh at 50% 110%,rgba(255,70,220,.14),transparent 60%),var(--bg)}
+#snow{position:fixed;inset:0;z-index:-1;pointer-events:none}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px}
+a{color:inherit}
+
+/* ---------- первый экран ---------- */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+  padding:48px 0 28px;gap:18px}
+.org{font-family:"Comfortaa";font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:clamp(13px,3.6vw,17px);
+  color:var(--cyan);text-shadow:var(--glow-c)}
+.invite{font-family:"Lobster";font-size:clamp(26px,7vw,38px);color:var(--pink);text-shadow:var(--glow-p);margin-top:-6px}
+h1{font-weight:400;line-height:1}
+h1 .t1{display:block;font-family:"Unbounded";font-weight:800;font-size:clamp(28px,8.6vw,64px);letter-spacing:.02em;
+  color:#c9fff0;text-shadow:var(--glow-g);animation:flick 6s infinite}
+h1 .t2{display:block;font-family:"Lobster";font-size:clamp(64px,19vw,140px);color:#d9e0ff;margin-top:.04em;
+  text-shadow:0 0 6px rgba(124,140,255,1),0 0 22px rgba(124,140,255,.75),0 0 60px rgba(124,140,255,.45)}
+@keyframes flick{0%,100%{opacity:1}92%{opacity:1}93%{opacity:.35}94%{opacity:1}96%{opacity:.6}97%{opacity:1}}
+.when{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 22px;font-family:"Unbounded";font-weight:700;
+  font-size:clamp(17px,4.6vw,24px);margin-top:6px}
+.when .d{color:#ffd2f6;text-shadow:var(--glow-p)}
+.when .h{color:#d6f9ff;text-shadow:var(--glow-c)}
+.where{color:var(--muted);font-size:clamp(14px,3.8vw,17px)}
+.poster{width:min(270px,62vw);aspect-ratio:9/16;border-radius:20px;overflow:hidden;border:1px solid var(--line);
+  box-shadow:0 0 24px rgba(60,225,255,.35),0 0 70px rgba(255,70,220,.18);margin:6px 0 4px}
+.poster img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* ---------- обратный отсчёт ---------- */
+.count{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;width:100%;max-width:420px}
+.count div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 4px 8px;backdrop-filter:blur(6px)}
+.count b{display:block;font-family:"Unbounded";font-weight:700;font-size:clamp(22px,6.4vw,32px);color:#fff;text-shadow:var(--glow-c)}
+.count span{font-size:12px;color:var(--muted)}
+.count.done{display:block;font-family:"Unbounded";color:var(--green);text-shadow:var(--glow-g);padding:12px}
+
+/* ---------- кнопки ---------- */
+.btns{display:flex;flex-direction:column;gap:12px;width:100%;max-width:420px}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:14px 18px;border-radius:16px;
+  font-family:"Unbounded";font-weight:600;font-size:15px;text-decoration:none;letter-spacing:.01em;cursor:pointer;
+  border:1.5px solid var(--cyan);color:#eaffff;background:rgba(60,225,255,.08);box-shadow:0 0 14px rgba(60,225,255,.35),inset 0 0 14px rgba(60,225,255,.12);
+  transition:transform .15s ease,box-shadow .2s ease}
+.btn:active{transform:scale(.98)}
+.btn:hover{box-shadow:0 0 22px rgba(60,225,255,.6),inset 0 0 18px rgba(60,225,255,.2)}
+.btn.pink{border-color:var(--pink);color:#fff0fc;background:rgba(255,70,220,.1);box-shadow:0 0 16px rgba(255,70,220,.45),inset 0 0 14px rgba(255,70,220,.14)}
+.btn.pink:hover{box-shadow:0 0 26px rgba(255,70,220,.7),inset 0 0 18px rgba(255,70,220,.22)}
+.btn.ghost{border-color:var(--line);background:var(--card);box-shadow:none;color:var(--text)}
+.btn svg{width:20px;height:20px;flex:none}
+
+/* ---------- разделы ---------- */
+section{padding:34px 0}
+h2{font-family:"Unbounded";font-weight:700;font-size:clamp(20px,5.6vw,28px);margin-bottom:16px;letter-spacing:.01em}
+h2 .n{color:var(--cyan);text-shadow:var(--glow-c)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px 18px;backdrop-filter:blur(8px)}
+.muted{color:var(--muted)}
+
+.prog{list-style:none;position:relative;padding-left:8px}
+.prog::before{content:"";position:absolute;left:62px;top:8px;bottom:8px;width:2px;
+  background:linear-gradient(var(--green),var(--cyan),var(--blue),var(--pink));box-shadow:0 0 10px rgba(60,225,255,.6);border-radius:2px}
+.prog li{display:grid;grid-template-columns:56px 1fr;gap:20px;padding:10px 0;position:relative}
+.prog li::before{content:"";position:absolute;left:49px;top:19px;width:12px;height:12px;border-radius:50%;background:var(--bg);
+  border:2px solid var(--c,var(--cyan));box-shadow:0 0 10px var(--c,var(--cyan))}
+.prog time{font-family:"Unbounded";font-weight:700;font-size:17px;color:#fff;padding-top:3px}
+.prog b{display:block;font-family:"Unbounded";font-weight:600;font-size:16px;color:var(--c,var(--cyan))}
+.prog p{color:var(--muted);font-size:14px}
+.note{font-size:13px;color:var(--muted);margin-top:10px}
+
+.dress{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center}
+.dress .ico{width:64px;height:64px;border-radius:18px;display:grid;place-items:center;border:1.5px solid var(--pink);
+  box-shadow:var(--glow-p);font-size:30px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chips span{padding:6px 12px;border-radius:99px;border:1px solid var(--line);font-size:13px;background:rgba(255,255,255,.03)}
+
+.place .map{display:block;margin-top:14px;border-radius:16px;overflow:hidden;border:1px solid var(--line);text-decoration:none;
+  background:linear-gradient(135deg,rgba(60,225,255,.12),rgba(255,70,220,.1));padding:18px;position:relative}
+.place .map strong{font-family:"Unbounded";font-size:17px;display:block}
+.steps{counter-reset:s;list-style:none;margin-top:14px;display:grid;gap:10px}
+.steps li{counter-increment:s;display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start}
+.steps li::before{content:counter(s);width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-family:"Unbounded";
+  font-weight:700;font-size:14px;border:1.5px solid var(--green);color:var(--green);box-shadow:var(--glow-g)}
+.deadline{display:inline-block;margin-top:12px;padding:6px 12px;border-radius:10px;border:1px dashed var(--pink);color:#ffd2f6;font-size:14px}
+
+.contact{display:flex;gap:14px;align-items:center}
+.ava{width:56px;height:56px;border-radius:50%;flex:none;display:grid;place-items:center;font-family:"Unbounded";font-weight:800;
+  border:1.5px solid var(--cyan);box-shadow:var(--glow-c);font-size:18px}
+.contact .links{display:flex;flex-wrap:wrap;gap:8px 14px;margin-top:6px}
+.contact .links a{color:var(--cyan);text-decoration:none;border-bottom:1px dashed rgba(60,225,255,.5)}
+
+.faq details{border-top:1px solid var(--line);padding:14px 2px}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq summary::after{content:"+";font-family:"Unbounded";color:var(--cyan)}
+.faq details[open] summary::after{content:"–"}
+.faq p{color:var(--muted);margin-top:8px;font-size:15px}
+
+video{width:100%;border-radius:18px;border:1px solid var(--line);box-shadow:0 0 24px rgba(60,225,255,.3);display:block;background:#000}
+footer{text-align:center;padding:30px 0 50px;color:var(--muted);font-size:13px}
+footer .ny{font-family:"Lobster";font-size:26px;color:#d9e0ff;text-shadow:0 0 12px rgba(124,140,255,.8);display:block;margin-bottom:6px}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.reveal.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<canvas id="snow" aria-hidden="true"></canvas>
+
+<main class="wrap">
+  <!-- ===== ПЕРВЫЙ ЭКРАН ===== -->
+  <header class="hero">
+    <div class="org">Блок перспективного развития</div>
+    <div class="invite">приглашает на</div>
+    <h1><span class="t1">ПЕРСПЕКТИВНЫЙ</span><span class="t2">Новый год</span></h1>
+    <div class="when"><span class="d">18 декабря</span><span class="h">начало в 19:00</span></div>
+    <div class="where">«Курятник» у бара «Балаган» · ул. Муравленко, 1 · Ноябрьск</div>
+    <div class="count" id="count" aria-live="polite">
+      <div><b id="cd-d">–</b><span>дней</span></div>
+      <div><b id="cd-h">–</b><span>часов</span></div>
+      <div><b id="cd-m">–</b><span>минут</span></div>
+      <div><b id="cd-s">–</b><span>секунд</span></div>
+    </div>
+    <div class="btns">
+      <a class="btn pink" href="#rsvp">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>
+        Подтвердить участие</a>
+      <a class="btn" href="https://2gis.ru/noyabrsk/geo/70030076331342559/75.413276,63.192444" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        Маршрут в 2ГИС</a>
+      <a class="btn ghost" href="event.ics" download="Перспективный_Новый_год.ics">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+        Добавить в календарь</a>
+    </div>
+  </header>
+
+  <!-- ===== РОЛИК ===== (чтобы показать ролик: положите файл в папку assets с именем teaser.mp4
+       и удалите эту строку-комментарий и строку "===== конец ролика =====" ниже)
+  <section class="reveal">
+    <h2><span class="n">▶</span> Тизер вечера</h2>
+    <video src="assets/teaser.mp4" poster="assets/poster.jpg" controls playsinline preload="none"></video>
+  </section>
+  ===== конец ролика ===== -->
+
+  <!-- ===== ПРОГРАММА ===== -->
+  <section class="reveal" id="program">
+    <h2><span class="n">01</span> Программа</h2>
+    <div class="card">
+      <ol class="prog">
+        <li style="--c:var(--green)"><time>19:00</time><div><b>Неоновый вход</b><p>Welcome-зона: напитки, фотозона, встречаемся и заряжаемся</p></div></li>
+        <li style="--c:var(--cyan)"><time>19:30</time><div><b>Приветствие</b><p>Тёплые слова и итоги года</p></div></li>
+        <li style="--c:var(--blue)"><time>19:40</time><div><b>Перспективный старт</b><p>Игры, конкурсы и призы — разогреваемся всем блоком</p></div></li>
+        <li style="--c:#ffb347"><time>20:20</time><div><b>Стендап</b><p>Шутки, от которых не спрячешься</p></div></li>
+        <li style="--c:var(--pink)"><time>21:00</time><div><b>Неоновая ночь</b><p>Дискотека и танцы до последнего трека</p></div></li>
+      </ol>
+      <p class="note">Программа уточняется — финальную версию опубликуем здесь же.</p>
+    </div>
+  </section>
+
+  <!-- ===== ДРЕСС-КОД ===== -->
+  <section class="reveal" id="dress">
+    <h2><span class="n">02</span> Дресс-код</h2>
+    <div class="card dress">
+      <div class="ico" aria-hidden="true">✦</div>
+      <div>
+        <b style="font-family:Unbounded;font-size:20px;color:#ffd2f6;text-shadow:var(--glow-p)">НЕОН</b>
+        <p class="muted">Всё, что светится и сияет: яркие цвета, блёстки, светящиеся аксессуары.</p>
+      </div>
+    </div>
+    <div class="chips"><span>неоновые браслеты</span><span>светящиеся очки</span><span>блёстки</span><span>яркий акцент</span><span>белое — светится в УФ</span></div>
+  </section>
+
+  <!-- ===== МЕСТО ===== -->
+  <section class="reveal place" id="place">
+    <h2><span class="n">03</span> Место</h2>
+    <div class="card">
+      <b style="font-family:Unbounded;font-size:18px">«Курятник» у бара «Балаган»</b>
+      <p class="muted">Ноябрьск, ул. Муравленко, 1</p>
+      <a class="map" href="https://2gis.ru/noyabrsk/geo/70030076331342559/75.413276,63.192444" target="_blank" rel="noopener">
+        <strong>Открыть в 2ГИС →</strong>
+        <span class="muted">маршрут, вход и парковка</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== ПОДТВЕРЖДЕНИЕ ===== -->
+  <section class="reveal" id="rsvp">
+    <h2><span class="n">04</span> Подтвердите участие</h2>
+    <div class="card">
+      <ol class="steps">
+        <li><div>Вступите в чат праздника в Telegram</div></li>
+        <li><div>Проголосуйте в опросе «Иду / Не иду»</div></li>
+        <li><div>Подпишитесь в чате <b>фамилией и именем</b>, чтобы мы точно вас узнали</div></li>
+      </ol>
+      <div class="deadline">Ответ — до 11 декабря</div>
+      <div class="btns" style="margin-top:16px">
+        <a class="btn pink" href="https://t.me/+2NVhL53QIa4zMTJi" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.7.8l-4.8-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.5 13.2l-4.7-1.5c-1-.3-1-1 .2-1.5L20.5 3c.9-.3 1.6.2 1.4 1.3z"/></svg>
+          Открыть чат и проголосовать</a>
+      </div>
+      <p class="note">В чате же будут новости, фото и видео с праздника.</p>
+    </div>
+  </section>
+
+  <!-- ===== ВОПРОСЫ ===== -->
+  <section class="reveal faq" id="faq">
+    <h2><span class="n">05</span> Вопросы</h2>
+    <details><summary>Во сколько приходить?</summary><p>Welcome-зона открывается в 19:00 — приходите к этому времени, чтобы успеть на приветствие в 19:30.</p></details>
+    <details><summary>Можно прийти с парой?</summary><p>Уточните, пожалуйста, у организатора — его контакты ниже.</p></details>
+    <details><summary>Нужно ли что-то брать с собой?</summary><p>Только хорошее настроение и что-нибудь неоновое.</p></details>
+    <details><summary>Я опаздываю / не смогу прийти</summary><p>Напишите организатору — так мы правильно рассчитаем места.</p></details>
+  </section>
+
+  <!-- ===== КОНТАКТЫ =====
+       ВПИШИТЕ СВОИ ДАННЫЕ: замените текст в кавычках href="..." и текст между > и <.
+       Телефон пишется так: href="tel:+79990000000". Telegram: href="https://t.me/ваш_ник" -->
+  <section class="reveal" id="contact">
+    <h2><span class="n">06</span> Организатор</h2>
+    <div class="card contact">
+      <div class="ava" aria-hidden="true">АГ</div>
+      <div>
+        <b style="font-family:Unbounded">Александр Гладков</b>
+        <div class="links">
+          <a href="https://t.me/ВАШ_НИК" target="_blank" rel="noopener">Telegram</a>
+          <a href="tel:+70000000000">+7 (000) 000-00-00</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span class="ny">До встречи на празднике!</span>
+    Блок перспективного развития · 2026
+  </footer>
+</main>
+
+<script>
+// ---------- обратный отсчёт до 18 декабря 2026, 19:00 по Ноябрьску (UTC+5) ----------
+(function(){
+  var target = Date.UTC(2026, 11, 18, 14, 0, 0);
+  var el = document.getElementById("count");
+  function pad(n){ return (n < 10 ? "0" : "") + n; }
+  function tick(){
+    var d = target - Date.now();
+    if (d <= 0) { el.className = "count done"; el.textContent = "Праздник уже начался! ✦"; return; }
+    var s = Math.floor(d / 1000);
+    document.getElementById("cd-d").textContent = Math.floor(s / 86400);
+    document.getElementById("cd-h").textContent = pad(Math.floor(s % 86400 / 3600));
+    document.getElementById("cd-m").textContent = pad(Math.floor(s % 3600 / 60));
+    document.getElementById("cd-s").textContent = pad(s % 60);
+    setTimeout(tick, 1000 - Date.now() % 1000);
+  }
+  tick();
+})();
+
+// ---------- плавное появление разделов ----------
+(function(){
+  var items = document.querySelectorAll(".reveal");
+  if (!("IntersectionObserver" in window)) { items.forEach(function(e){ e.classList.add("on"); }); return; }
+  var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add("on"); io.unobserve(e.target); } }); }, { threshold: .12 });
+  items.forEach(function(e){ io.observe(e); });
+})();
+
+// ---------- неоновый снег ----------
+(function(){
+  if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var c = document.getElementById("snow"), x = c.getContext("2d"), W, H, dpr, flakes = [];
+  var cols = ["#7fe8ff", "#3ce1ff", "#9aa8ff", "#ff7ae6", "#ffffff"];
+  function size(){ dpr = Math.min(2, window.devicePixelRatio || 1); W = innerWidth; H = innerHeight;
+    c.width = W * dpr; c.height = H * dpr; c.style.width = W + "px"; c.style.height = H + "px"; x.setTransform(dpr, 0, 0, dpr, 0, 0); }
+  size(); addEventListener("resize", size);
+  var n = Math.round(Math.min(34, W * H / 26000));
+  for (var i = 0; i < n; i++) flakes.push({ x: Math.random() * W, y: Math.random() * H, r: 5 + Math.random() * 11,
+    v: 14 + Math.random() * 26, a: Math.random() * 6.28, s: (Math.random() - .5) * .6, c: cols[i % cols.length], p: Math.random() * 6.28 });
+  function flake(f, t){
+    x.save(); x.translate(f.x + Math.sin(t * .6 + f.p) * 14, f.y); x.rotate(f.a + t * f.s);
+    x.strokeStyle = f.c; x.lineWidth = 1.4; x.lineCap = "round"; x.shadowColor = f.c; x.shadowBlur = 10;
+    x.globalAlpha = .45 + .35 * Math.sin(t * 1.7 + f.p);
+    for (var k = 0; k < 6; k++) { x.rotate(Math.PI / 3); x.beginPath(); x.moveTo(0, 0); x.lineTo(0, -f.r);
+      x.moveTo(0, -f.r * .45); x.lineTo(-f.r * .28, -f.r * .68); x.moveTo(0, -f.r * .45); x.lineTo(f.r * .28, -f.r * .68); x.stroke(); }
+    x.restore();
+  }
+  var last = performance.now();
+  function loop(now){
+    var dt = Math.min(.05, (now - last) / 1000); last = now; x.clearRect(0, 0, W, H);
+    for (var i = 0; i < flakes.length; i++) { var f = flakes[i]; f.y += f.v * dt; if (f.y > H + 20) { f.y = -20; f.x = Math.random() * W; } flake(f, now / 1000); }
+    requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>
