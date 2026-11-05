@@ -85,13 +85,15 @@ h2 .n{color:var(--cyan);text-shadow:var(--glow-c)}
 .card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px 18px;backdrop-filter:blur(8px)}
 .muted{color:var(--muted)}
 
-.prog{list-style:none;position:relative;padding-left:8px}
-.prog::before{content:"";position:absolute;left:62px;top:8px;bottom:8px;width:2px;
+/* шкала: [время 64px] [16px] [точка-линия 12px] [16px] [текст] - колонки не пересекаются */
+.prog{list-style:none;position:relative}
+.prog::before{content:"";position:absolute;left:85px;top:12px;bottom:12px;width:2px;
   background:linear-gradient(var(--green),var(--cyan),var(--blue),var(--pink));box-shadow:0 0 10px rgba(60,225,255,.6);border-radius:2px}
-.prog li{display:grid;grid-template-columns:56px 1fr;gap:20px;padding:10px 0;position:relative}
-.prog li::before{content:"";position:absolute;left:49px;top:19px;width:12px;height:12px;border-radius:50%;background:var(--bg);
+.prog li{display:grid;grid-template-columns:64px 1fr;column-gap:44px;padding:10px 0;position:relative}
+.prog li::before{content:"";position:absolute;left:80px;top:17px;width:12px;height:12px;border-radius:50%;background:var(--bg);
   border:2px solid var(--c,var(--cyan));box-shadow:0 0 10px var(--c,var(--cyan))}
-.prog time{font-family:"Unbounded";font-weight:700;font-size:17px;color:#fff;padding-top:3px}
+.prog time{font-family:"Unbounded";font-weight:700;font-size:16px;color:#fff;padding-top:2px;white-space:nowrap;
+  font-variant-numeric:tabular-nums;text-align:right}
 .prog b{display:block;font-family:"Unbounded";font-weight:600;font-size:16px;color:var(--c,var(--cyan))}
 .prog p{color:var(--muted);font-size:14px}
 .note{font-size:13px;color:var(--muted);margin-top:10px}
@@ -240,6 +242,7 @@ footer .ny{font-family:"Lobster";font-size:26px;color:#d9e0ff;text-shadow:0 0 12
           <label><input type="radio" name="answer" value="Приду" checked><span>✦ Приду</span></label>
           <label><input type="radio" name="answer" value="Не смогу"><span>Не смогу</span></label>
         </div>
+        <input name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0">
         <button class="btn pink" type="submit">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>
           Отправить ответ</button>
@@ -315,8 +318,9 @@ footer .ny{font-family:"Lobster";font-size:26px;color:#d9e0ff;text-shadow:0 0 12
 })();
 
 // ---------- подтверждение участия ----------
-// RSVP_ENDPOINT - адрес сервиса, который принимает ответы (Google Таблица через Apps Script, Яндекс и т.п.).
-// Пока он пустой, ответ копируется и гость отправляет его организатору в Telegram одним сообщением.
+// RSVP_ENDPOINT - адрес веб-приложения Google Apps Script (ответы пишутся в Google Таблицу организатора,
+// видит их только он). Вставьте сюда ссылку вида https://script.google.com/macros/s/.../exec
+// Пока ссылка пустая, ответ копируется и гость отправляет его организатору в Telegram.
 var RSVP_ENDPOINT = "";
 (function(){
   var f = document.getElementById("rsvp-form"), name = document.getElementById("rsvp-name"), err = document.getElementById("rsvp-err");
@@ -327,10 +331,14 @@ var RSVP_ENDPOINT = "";
     err.hidden = true;
     var ans = f.querySelector("input[name=answer]:checked").value;
     var text = "Перспективный Новый год: " + n + " — " + ans.toLowerCase();
+    if (f.website && f.website.value) return;            // ловушка для спам-ботов (поле невидимо для людей)
     if (RSVP_ENDPOINT) {
-      fetch(RSVP_ENDPOINT, { method: "POST", body: JSON.stringify({ name: n, answer: ans, at: new Date().toISOString() }) })
+      var b = f.querySelector("button"); b.disabled = true; b.style.opacity = .6;
+      // text/plain + no-cors: запрос уходит без лишних проверок браузера, Google пишет строку в таблицу
+      fetch(RSVP_ENDPOINT, { method: "POST", mode: "no-cors", headers: { "Content-Type": "text/plain;charset=utf-8" },
+                             body: JSON.stringify({ name: n, answer: ans }) })
         .then(function(){ f.hidden = true; document.getElementById("rsvp-done").hidden = false; })
-        .catch(function(){ fallback(text); });
+        .catch(function(){ b.disabled = false; b.style.opacity = 1; fallback(text); });
     } else { fallback(text); }
   });
   function fallback(text){
