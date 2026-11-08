@@ -6,15 +6,15 @@ METHOD:PUBLISH
 BEGIN:VEVENT
 UID:perspektivny-ng-2026@gladkovae1558-design.github.io
 DTSTAMP:20261106T000000Z
-DTSTART:20261218T140000Z
-DTEND:20261218T190000Z
-SUMMARY:Перспективный Новый год
-DESCRIPTION:Блок перспективного развития приглашает! 19:00 — welcome-зона. Дресс-код — неон. Подробности: https://gladkovae1558-design.github.io/perspektivny-ng/
+DTSTART:20261211T140000Z
+DTEND:20261211T190000Z
+SUMMARY:Перспективный Новый год · White Party
+DESCRIPTION:Блок перспективного развития приглашает на Sensation · White Party! 19:00 — welcome-зона. Дресс-код — all white + неон. Алкоголь — свой. Подробности: https://gladkovae1558-design.github.io/perspektivny-ng/
 LOCATION:«Курятник» у бара «Балаган»\, ул. Муравленко\, 1\, Ноябрьск
 URL:https://gladkovae1558-design.github.io/perspektivny-ng/
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:Завтра — Перспективный Новый год!
+DESCRIPTION:Завтра — Перспективный Новый год · White Party!
 TRIGGER:-P1D
 END:VALARM
 END:VEVENT

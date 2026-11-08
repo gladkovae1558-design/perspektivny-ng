@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Перспективный Новый год · 18 декабря</title>
-<meta name="description" content="Блок перспективного развития приглашает на Перспективный Новый год. 18 декабря, 19:00, «Курятник» у бара «Балаган», Ноябрьск.">
+<title>Перспективный Новый год · Sensation White Party · 11 декабря</title>
+<meta name="description" content="Блок перспективного развития приглашает на Перспективный Новый год в стиле Sensation · White Party. 11 декабря, 19:00, «Курятник» у бара «Балаган», Ноябрьск.">
 <!-- страница доступна только по ссылке: просим поисковики её не показывать -->
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#07060f">
 <!-- превью при пересылке ссылки в Telegram / WhatsApp -->
-<meta property="og:title" content="Перспективный Новый год · 18 декабря">
-<meta property="og:description" content="Блок перспективного развития приглашает! 19:00, «Курятник» у бара «Балаган». Дресс-код — неон.">
+<meta property="og:title" content="Перспективный Новый год · White Party · 11 декабря">
+<meta property="og:description" content="Блок перспективного развития приглашает на Sensation · White Party! 11 декабря, 19:00, «Курятник» у бара «Балаган». Дресс-код — total white.">
 <meta property="og:image" content="https://gladkovae1558-design.github.io/perspektivny-ng/assets/og.jpg">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 4l14 22h-8l12 16h-9l11 14H12l11-14h-9l12-16h-8z' fill='none' stroke='%233ce1ff' stroke-width='3' stroke-linejoin='round'/%3E%3C/svg%3E">
@@ -145,12 +145,48 @@ h2 .n{color:var(--cyan);text-shadow:var(--glow-c)}
 video{width:100%;border-radius:18px;border:1px solid var(--line);box-shadow:0 0 24px rgba(60,225,255,.3);display:block;background:#000}
 footer{text-align:center;padding:30px 0 50px;color:var(--muted);font-size:13px}
 footer .ny{font-family:"Lobster";font-size:26px;color:#d9e0ff;text-shadow:0 0 12px rgba(124,140,255,.8);display:block;margin-bottom:6px}
+/* ---------- тема White Party ---------- */
+.theme{display:inline-flex;align-items:center;gap:10px;padding:9px 18px;border-radius:99px;border:1.5px solid rgba(255,255,255,.85);
+  font-family:"Unbounded";font-weight:700;font-size:clamp(12px,3.4vw,15px);letter-spacing:.16em;color:#fff;
+  text-shadow:0 0 8px rgba(255,255,255,.9),0 0 22px rgba(180,220,255,.6);
+  box-shadow:0 0 14px rgba(255,255,255,.45),0 0 40px rgba(160,210,255,.25),inset 0 0 12px rgba(255,255,255,.15)}
+.theme i{font-style:normal;color:var(--cyan)}
+.dc-title{font-family:Unbounded;font-size:19px;color:#fff;text-shadow:0 0 8px rgba(255,255,255,.9),0 0 24px rgba(160,210,255,.6)}
+.dress .ico{border-color:#fff;box-shadow:0 0 8px rgba(255,255,255,.9),0 0 24px rgba(160,210,255,.5)}
+.more{margin-top:12px;border:1px solid var(--line);border-radius:16px;background:var(--card);overflow:hidden}
+.more summary{cursor:pointer;list-style:none;padding:14px 18px;font-family:Unbounded;font-weight:600;font-size:14px;display:flex;justify-content:space-between}
+.more summary::after{content:"▾";color:var(--cyan);transition:transform .2s}
+.more[open] summary::after{transform:rotate(180deg)}
+.more-body{padding:0 18px 16px;display:grid;gap:10px;font-size:15px}
+.more-body .w{color:#fff;text-shadow:0 0 10px rgba(255,255,255,.7)}
+.more-body .n2{color:#ffd2f6;text-shadow:var(--glow-p)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:520px){.grid2{grid-template-columns:1fr}}
+.tile{display:grid;gap:4px;align-content:start}
+.tile .lbl{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan)}
+.tile .big{font-family:Unbounded;font-weight:800;font-size:34px;color:#fff;text-shadow:var(--glow-c)}
+.tile .mid{font-family:Unbounded;font-weight:600;font-size:16px;line-height:1.35;color:#dfffee;text-shadow:var(--glow-g)}
+.alert{margin-top:12px;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;border-color:rgba(255,70,220,.55);
+  box-shadow:0 0 18px rgba(255,70,220,.22),inset 0 0 14px rgba(255,70,220,.08)}
+.alert b{color:#ffd2f6;font-family:Unbounded;font-weight:700}
+.ico2{font-size:28px;line-height:1}
+.ticks{list-style:none;display:grid;gap:8px;margin-top:10px}
+.ticks li{padding-left:26px;position:relative;color:var(--muted)}
+.ticks li::before{content:"✦";position:absolute;left:0;color:var(--cyan);text-shadow:var(--glow-c)}
+/* ---------- неоновые ёлочки на фоне ---------- */
+.trees{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.trees svg{position:absolute;opacity:.16;filter:drop-shadow(0 0 6px currentColor) drop-shadow(0 0 16px currentColor);animation:tglow 5s ease-in-out infinite}
+.trees .t1{left:-38px;bottom:4vh;width:170px;color:#46ffbe}
+.trees .t2{right:-30px;top:16vh;width:130px;color:#3ce1ff;animation-delay:-2s}
+.trees .t3{right:8vw;bottom:-20px;width:96px;color:#ff46dc;animation-delay:-3.5s;opacity:.12}
+@keyframes tglow{0%,100%{opacity:.13}50%{opacity:.2}}
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
 .reveal.on{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 </style>
 </head>
 <body>
+<div class="trees" aria-hidden="true"><svg viewBox="0 0 100 140" class="t1" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"><path d="M50 6l3 6 6 1-4.5 4 1 6-5.5-3-5.5 3 1-6-4.5-4 6-1z"/><path d="M50 24 30 52h10L22 78h12L14 106h72L66 78h12L60 52h10z"/><path d="M50 106v20M40 126h20"/><circle cx="44" cy="62" r="2"/><circle cx="57" cy="84" r="2"/><circle cx="38" cy="94" r="2"/><circle cx="64" cy="98" r="2"/></svg><svg viewBox="0 0 100 140" class="t2" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"><path d="M50 6l3 6 6 1-4.5 4 1 6-5.5-3-5.5 3 1-6-4.5-4 6-1z"/><path d="M50 24 30 52h10L22 78h12L14 106h72L66 78h12L60 52h10z"/><path d="M50 106v20M40 126h20"/><circle cx="44" cy="62" r="2"/><circle cx="57" cy="84" r="2"/><circle cx="38" cy="94" r="2"/><circle cx="64" cy="98" r="2"/></svg><svg viewBox="0 0 100 140" class="t3" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"><path d="M50 6l3 6 6 1-4.5 4 1 6-5.5-3-5.5 3 1-6-4.5-4 6-1z"/><path d="M50 24 30 52h10L22 78h12L14 106h72L66 78h12L60 52h10z"/><path d="M50 106v20M40 126h20"/><circle cx="44" cy="62" r="2"/><circle cx="57" cy="84" r="2"/><circle cx="38" cy="94" r="2"/><circle cx="64" cy="98" r="2"/></svg></div>
 <canvas id="snow" aria-hidden="true"></canvas>
 
 <main class="wrap">
@@ -159,7 +195,8 @@ footer .ny{font-family:"Lobster";font-size:26px;color:#d9e0ff;text-shadow:0 0 12
     <div class="org">Блок перспективного развития</div>
     <div class="invite">приглашает на</div>
     <h1><span class="t1">ПЕРСПЕКТИВНЫЙ</span><span class="t2">Новый год</span></h1>
-    <div class="when"><span class="d">18 декабря</span><span class="h">начало в 19:00</span></div>
+    <div class="theme"><span>SENSATION</span><i>·</i><span>WHITE PARTY</span></div>
+    <div class="when"><span class="d">11 декабря</span><span class="h">начало в 19:00</span></div>
     <div class="where">«Курятник» у бара «Балаган» · ул. Муравленко, 1 · Ноябрьск</div>
     <div class="count" id="count" aria-live="polite">
       <div><b id="cd-d">–</b><span>дней</span></div>
@@ -180,26 +217,24 @@ footer .ny{font-family:"Lobster";font-size:26px;color:#d9e0ff;text-shadow:0 0 12
     </div>
   </header>
 
-  <!-- ===== РОЛИК ===== (чтобы показать ролик: положите файл в папку assets с именем teaser.mp4
-       и удалите эту строку-комментарий и строку "===== конец ролика =====" ниже)
-  <section class="reveal">
+  <!-- ===== РОЛИК ===== -->
+  <section class="reveal" id="teaser">
     <h2><span class="n">▶</span> Тизер вечера</h2>
     <video src="assets/teaser.mp4" poster="assets/poster.jpg" controls playsinline preload="none"></video>
   </section>
-  ===== конец ролика ===== -->
 
   <!-- ===== ПРОГРАММА ===== -->
   <section class="reveal" id="program">
     <h2><span class="n">01</span> Программа</h2>
     <div class="card">
       <ol class="prog">
-        <li style="--c:var(--green)"><time>19:00</time><div><b>Неоновый вход</b><p>Welcome-зона: напитки, фотозона, встречаемся и заряжаемся</p></div></li>
+        <li style="--c:var(--green)"><time>19:00</time><div><b>Неоновый вход</b><p>Welcome-зона: коктейли, лимонады и шампанское — встречаемся и заряжаемся</p></div></li>
         <li style="--c:var(--cyan)"><time>19:30</time><div><b>Приветствие</b><p>Тёплые слова и итоги года</p></div></li>
-        <li style="--c:var(--blue)"><time>19:40</time><div><b>Перспективный старт</b><p>Игры, конкурсы и призы — разогреваемся всем блоком</p></div></li>
+        <li style="--c:var(--blue)"><time>19:40</time><div><b>Перспективный старт</b><p>Игры и конкурсы — разогреваемся всем блоком</p></div></li>
         <li style="--c:#ffb347"><time>20:20</time><div><b>Стендап</b><p>Шутки, от которых не спрячешься</p></div></li>
-        <li style="--c:var(--pink)"><time>21:00</time><div><b>Неоновая ночь</b><p>Дискотека и танцы до последнего трека</p></div></li>
+        <li style="--c:var(--pink)"><time>21:00</time><div><b>White Night</b><p>Вечеринка в стиле Sensation: дискотека и танцы до последнего трека</p></div></li>
       </ol>
-      <p class="note">Программа уточняется — финальную версию опубликуем здесь же.</p>
+      <p class="note">Программа уточняется — финальную версию опубликуем здесь и в чате.</p>
     </div>
   </section>
 
@@ -209,16 +244,45 @@ footer .ny{font-family:"Lobster";font-size:26px;color:#d9e0ff;text-shadow:0 0 12
     <div class="card dress">
       <div class="ico" aria-hidden="true">✦</div>
       <div>
-        <b style="font-family:Unbounded;font-size:20px;color:#ffd2f6;text-shadow:var(--glow-p)">НЕОН</b>
-        <p class="muted">Всё, что светится и сияет: яркие цвета, блёстки, светящиеся аксессуары.</p>
+        <b class="dc-title">ALL WHITE · Sensation</b>
+        <p class="muted">Главное — белый образ с головы до ног. И всё, что светится: неоновые браслеты, очки, светяшки.</p>
       </div>
     </div>
-    <div class="chips"><span>неоновые браслеты</span><span>светящиеся очки</span><span>блёстки</span><span>яркий акцент</span><span>белое — светится в УФ</span></div>
+    <details class="more">
+      <summary>Как собрать образ</summary>
+      <div class="more-body">
+        <p><b class="w">Белый — основа.</b> Как на легендарных вечеринках Sensation: белые рубашки, футболки, платья, брюки, костюмы, белые кроссовки. Чем больше белого — тем лучше.</p>
+        <p><b class="n2">Неон — акцент.</b> Светящиеся браслеты, очки, ободки, блёстки — под ультрафиолетом белый и неон засияют вместе.</p>
+        <p class="muted">Не обязательно покупать новое: подойдёт всё белое из гардероба.</p>
+      </div>
+    </details>
+    <div class="chips"><span>⚪ total white</span><span>белые кроссовки</span><span>неоновые браслеты</span><span>светящиеся очки</span><span>блёстки</span></div>
+  </section>
+
+  <!-- ===== ВХОД И НАПИТКИ ===== -->
+  <section class="reveal" id="info">
+    <h2><span class="n">03</span> Вход и напитки</h2>
+    <div class="grid2">
+      <div class="card tile">
+        <span class="lbl">Вход</span>
+        <b class="big">3000 ₽</b>
+        <p class="muted">с человека · цена уточняется</p>
+      </div>
+      <div class="card tile">
+        <span class="lbl">Welcome-зона</span>
+        <b class="mid">коктейли · лимонады · шампанское</b>
+        <p class="muted">встречаем гостей с 19:00</p>
+      </div>
+    </div>
+    <div class="card alert">
+      <span class="ico2" aria-hidden="true">🥂</span>
+      <div><b>Алкоголь — свой.</b> Каждый приходит со своим алкоголем: на welcome-зоне будут коктейли, безалкогольные напитки и шампанское, а дальше — то, что принесёте с собой.</div>
+    </div>
   </section>
 
   <!-- ===== МЕСТО ===== -->
   <section class="reveal place" id="place">
-    <h2><span class="n">03</span> Место</h2>
+    <h2><span class="n">04</span> Место</h2>
     <div class="card">
       <b style="font-family:Unbounded;font-size:18px">«Курятник» у бара «Балаган»</b>
       <p class="muted">Ноябрьск, ул. Муравленко, 1</p>
@@ -231,7 +295,7 @@ footer .ny{font-family:"Lobster";font-size:26px;color:#d9e0ff;text-shadow:0 0 12
 
   <!-- ===== ПОДТВЕРЖДЕНИЕ ===== -->
   <section class="reveal" id="rsvp">
-    <h2><span class="n">04</span> Подтвердите участие</h2>
+    <h2><span class="n">05</span> Подтвердите участие</h2>
     <div class="card">
       <form id="rsvp-form" class="rsvp" novalidate>
         <label class="fld">
@@ -259,20 +323,39 @@ footer .ny{font-family:"Lobster";font-size:26px;color:#d9e0ff;text-shadow:0 0 12
       </div>
       <div class="sent" id="rsvp-done" hidden>
         <b>Спасибо, ответ принят! ✦</b>
-        <p>До встречи 18 декабря.</p>
+        <p>До встречи 11 декабря.</p>
       </div>
-      <div class="deadline">Ответ — до 11 декабря</div>
-      <p class="note">Новости, фото и видео с праздника — в <a href="https://t.me/+2NVhL53QIa4zMTJi" target="_blank" rel="noopener" style="color:var(--cyan)">общем чате в Telegram</a>.</p>
+      <div class="deadline">Ответ — до 4 декабря</div>
+    </div>
+  </section>
+
+  <!-- ===== ЧАТ ===== -->
+  <section class="reveal" id="chat">
+    <h2><span class="n">06</span> Чат вечеринки</h2>
+    <div class="card chat">
+      <p>Общий чат в Telegram — здесь всё самое свежее:</p>
+      <ul class="ticks">
+        <li>обновления программы и важная информация</li>
+        <li>ответы на вопросы</li>
+        <li>фото и видео с вечеринки — скидывайте всё!</li>
+      </ul>
+      <div class="btns" style="margin-top:14px">
+        <a class="btn" href="https://t.me/+2NVhL53QIa4zMTJi" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.7.8l-4.8-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2L6.5 13.2l-4.7-1.5c-1-.3-1-1 .2-1.5L20.5 3c.9-.3 1.6.2 1.4 1.3z"/></svg>
+          Вступить в чат</a>
+      </div>
     </div>
   </section>
 
   <!-- ===== ВОПРОСЫ ===== -->
   <section class="reveal faq" id="faq">
-    <h2><span class="n">05</span> Вопросы</h2>
+    <h2><span class="n">07</span> Вопросы</h2>
     <details><summary>Во сколько приходить?</summary><p>Welcome-зона открывается в 19:00 — приходите к этому времени, чтобы успеть на приветствие в 19:30.</p></details>
+    <details><summary>Сколько стоит вход?</summary><p>3000 ₽ с человека. Цена уточняется — финальную сумму сообщим в чате.</p></details>
+    <details><summary>Что взять с собой?</summary><p>Свой алкоголь, белый образ в стиле Sensation и что-нибудь светящееся. На welcome-зоне будут коктейли, безалкогольные напитки и шампанское.</p></details>
+    <details><summary>Какой дресс-код?</summary><p>All white — белый образ с головы до ног, плюс неоновые аксессуары и всё, что светится.</p></details>
     <details><summary>Можно прийти с парой?</summary><p>Уточните, пожалуйста, у организатора — его контакты ниже.</p></details>
-    <details><summary>Как подтвердить участие?</summary><p>Впишите фамилию и имя в форму выше и нажмите «Отправить ответ» — до 11 декабря.</p></details>
-    <details><summary>Нужно ли что-то брать с собой?</summary><p>Только хорошее настроение и что-нибудь неоновое.</p></details>
+    <details><summary>Как подтвердить участие?</summary><p>Впишите фамилию и имя в форму выше и нажмите «Отправить ответ» — до 4 декабря.</p></details>
     <details><summary>Я опаздываю / не смогу прийти</summary><p>Напишите организатору — так мы правильно рассчитаем места.</p></details>
   </section>
 
@@ -280,7 +363,7 @@ footer .ny{font-family:"Lobster";font-size:26px;color:#d9e0ff;text-shadow:0 0 12
        Чтобы поменять: замените текст в кавычках href="..." и текст между > и <.
        Телефон пишется так: href="tel:+79990000000". -->
   <section class="reveal" id="contact">
-    <h2><span class="n">06</span> Организатор</h2>
+    <h2><span class="n">08</span> Организатор</h2>
     <div class="card contact">
       <div class="ava" aria-hidden="true">АГ</div>
       <div>
@@ -300,9 +383,9 @@ footer .ny{font-family:"Lobster";font-size:26px;color:#d9e0ff;text-shadow:0 0 12
 </main>
 
 <script>
-// ---------- обратный отсчёт до 18 декабря 2026, 19:00 по Ноябрьску (UTC+5) ----------
+// ---------- обратный отсчёт до 11 декабря 2026, 19:00 по Ноябрьску (UTC+5) ----------
 (function(){
-  var target = Date.UTC(2026, 11, 18, 14, 0, 0);
+  var target = Date.UTC(2026, 11, 11, 14, 0, 0);
   var el = document.getElementById("count");
   function pad(n){ return (n < 10 ? "0" : "") + n; }
   function tick(){
