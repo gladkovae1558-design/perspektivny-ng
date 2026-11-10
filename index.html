@@ -275,6 +275,14 @@ footer .ny{font-family:"Lobster";font-size:26px;color:#d9e0ff;text-shadow:0 0 12
       </div>
     </div>
     <div class="card alert">
+      <span class="ico2" aria-hidden="true">💳</span>
+      <div><b>Оплата переводом</b> по номеру телефона<br>
+        <a href="tel:+79819843235" style="font-family:Unbounded;font-size:18px;white-space:nowrap">+7 981 984-32-35</a>
+        <button type="button" class="btn" id="pay-copy" style="margin:8px 0 6px;padding:6px 14px;font-size:13px">Скопировать номер</button><br>
+        Банк — <b>Газпромбанк (ГПБ)</b>.<br>
+        <span class="muted">В сообщении к переводу обязательно напишите фамилию и имя — чтобы мы знали, кто перевёл.</span></div>
+    </div>
+    <div class="card alert">
       <span class="ico2" aria-hidden="true">🥂</span>
       <div><b>Алкоголь — свой.</b> Каждый приходит со своим алкоголем: на welcome-зоне будут коктейли, безалкогольные напитки и шампанское, а дальше — то, что принесёте с собой.</div>
     </div>
@@ -325,7 +333,7 @@ footer .ny{font-family:"Lobster";font-size:26px;color:#d9e0ff;text-shadow:0 0 12
         <b>Спасибо, ответ принят! ✦</b>
         <p>До встречи 11 декабря.</p>
       </div>
-      <div class="deadline">Ответ — до 4 декабря</div>
+      <div class="deadline">Ответ — до 13 ноября</div>
     </div>
   </section>
 
@@ -351,11 +359,11 @@ footer .ny{font-family:"Lobster";font-size:26px;color:#d9e0ff;text-shadow:0 0 12
   <section class="reveal faq" id="faq">
     <h2><span class="n">07</span> Вопросы</h2>
     <details><summary>Во сколько приходить?</summary><p>Welcome-зона открывается в 19:00 — приходите к этому времени, чтобы успеть на приветствие в 19:30.</p></details>
-    <details><summary>Сколько стоит вход?</summary><p>3000 ₽ с человека. Цена уточняется — финальную сумму сообщим в чате.</p></details>
+    <details><summary>Сколько стоит вход?</summary><p>3000 ₽ с человека (цена уточняется — финальную сумму сообщим в чате). Оплата переводом по номеру +7 981 984-32-35, Газпромбанк (ГПБ); в сообщении к переводу укажите фамилию и имя.</p></details>
     <details><summary>Что взять с собой?</summary><p>Свой алкоголь, белый образ в стиле Sensation и что-нибудь светящееся. На welcome-зоне будут коктейли, безалкогольные напитки и шампанское.</p></details>
     <details><summary>Какой дресс-код?</summary><p>All white — белый образ с головы до ног, плюс неоновые аксессуары и всё, что светится.</p></details>
     <details><summary>Можно прийти с парой?</summary><p>Уточните, пожалуйста, у организатора — его контакты ниже.</p></details>
-    <details><summary>Как подтвердить участие?</summary><p>Впишите фамилию и имя в форму выше и нажмите «Отправить ответ» — до 4 декабря.</p></details>
+    <details><summary>Как подтвердить участие?</summary><p>Впишите фамилию и имя в форму выше и нажмите «Отправить ответ» — до 13 ноября.</p></details>
     <details><summary>Я опаздываю / не смогу прийти</summary><p>Напишите организатору — так мы правильно рассчитаем места.</p></details>
   </section>
 
@@ -477,6 +485,11 @@ var RSVP_ENDPOINT = "https://script.google.com/macros/s/AKfycbyHaSE3me7A6R7YrzB7
   }
   requestAnimationFrame(loop);
 })();
+// копирование номера для перевода
+document.getElementById("pay-copy").addEventListener("click", e => {
+  const b = e.currentTarget, ok = () => { b.textContent = "Скопировано ✓"; setTimeout(() => b.textContent = "Скопировать номер", 2000); };
+  if (navigator.clipboard) navigator.clipboard.writeText("+79819843235").then(ok, ok); else ok();
+});
 </script>
 </body>
 </html>
